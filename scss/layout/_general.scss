@@ -24,3 +24,11 @@ body, html {
 body {
     font-family: $font;
 }
+
+.wrapper {
+	max-width: 940px;
+	min-width: 400px;
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+}

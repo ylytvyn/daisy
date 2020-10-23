@@ -1,0 +1,19 @@
+.menu {
+    display: flex;
+
+    &__item {
+        margin-left: 50px;
+    }
+
+    &__link {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #fff;
+        font-weight: 100;
+        transition: all .3s;
+
+        &:hover {
+            color: var(--red);
+        }
+    }
+}
