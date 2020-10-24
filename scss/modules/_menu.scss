@@ -11,9 +11,24 @@
         color: #fff;
         font-weight: 100;
         transition: all .3s;
+        position: relative;
 
         &:hover {
             color: var(--red);
+
+            &::after {
+                width: 100%;
+            }
+        }
+
+        &::after {
+            @include size(0, 4px);
+            @include align(false, true, absolute);
+            bottom: -10px;
+
+            content: '';
+            background-color: var(--red);
+            transition: all .3s;
         }
     }
 }
