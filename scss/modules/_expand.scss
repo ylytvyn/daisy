@@ -1,0 +1,47 @@
+.expand {
+    background: url('../images/expand-mobile.jpg') no-repeat top center;
+    background-size: cover;
+    position: relative;
+    padding-top: 90px;
+    padding-bottom: 1px;
+
+    @media (min-width: $mobile) {
+        background-image: url('../images/expand.jpg');
+    }
+
+    @media (min-width: $mobile-sm) and (max-width: $mobile) {
+        padding-top: 50px;
+    }
+
+    &::before {
+        @include size(100%);
+        @include pos($t: 0, $l: 0);
+
+        content: '';
+        background-color: #131313;
+        opacity: .7;
+    }
+
+    &__block {
+        border: 8px solid rgba(255, 255, 255, .1);
+        margin-bottom: 50px;
+        padding: 100px 20px;
+        text-align: center;
+
+        @media (min-width: $mobile-sm) and (max-width: $mobile) {
+            padding: 55px 20px;
+        }
+    }
+
+    &__title {
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 51px;
+        font-weight: 800;
+        margin-bottom: 40px;
+    }
+
+    &__word {
+        color: var(--red);
+    }
+}

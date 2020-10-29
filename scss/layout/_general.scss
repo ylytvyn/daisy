@@ -27,7 +27,7 @@ body {
 
 .wrapper {
 	max-width: 940px;
-	min-width: 400px;
+	min-width: 320px;
 	width: 100%;
 	margin: 0 auto;
 	position: relative;
@@ -48,8 +48,25 @@ body {
 	font-weight: 100;
 	transition: all .3s;
 
-	&:hover {
-		transform: rotate(360deg);
+	@media (max-width: $mobile) {
+		@include size(50px);
+		line-height: 48px;
+		font-size: 35px;
+	}
+
+	@media (min-width: $mobile-sm) and (max-width: $mobile) {
+		margin: 15px auto;
+	}
+
+	@media (min-width: $mobile) {
+		&:hover {
+			box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+		}
+	}
+
+	&--bordered {
+		background-color: transparent;
+		color: var(--red);
 	}
 }
 

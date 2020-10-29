@@ -1,8 +1,25 @@
 .menu {
     display: flex;
 
+    @media print {
+        display: none;
+    }
+
+    @media (max-width: $mobile) {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    @media (min-width: $mobile-sm) and (max-width: $mobile) {
+        height: 50px;
+    }
+
     &__item {
         margin-left: 50px;
+
+        @media (max-width: $mobile) {
+            margin-bottom: 20px;
+        }
     }
 
     &__link {
@@ -13,11 +30,17 @@
         transition: all .3s;
         position: relative;
 
-        &:hover {
+        &:active {
             color: var(--red);
+        }
 
-            &::after {
-                width: 100%;
+        @media (min-width: $mobile) {
+            &:hover {
+                color: var(--red);
+    
+                &::after {
+                    width: 100%;
+                }
             }
         }
 

@@ -1,8 +1,12 @@
 .header {
-    background: url('../images/header.jpg') no-repeat top center;
+    background: url('../images/header-mobile.jpg') no-repeat top center;
     background-size: cover;
     min-height: 100vh;
     padding-top: 1px;
+
+    @media (min-width: $mobile) {
+        background-image: url('../images/header.jpg');
+    }
 
     &::before {
         @include size(100%);
@@ -39,22 +43,33 @@
         position: relative;
         margin-bottom: 15px;
 
-        &::before,
-        &::after {
-            @include size(10%, 8px);
-            @include align($pos: absolute);
-
-            content: '';
-            background-color: rgba(255, 255, 255, .2);
+        @media (max-width: $mobile) {
+            font-size: 45px;
         }
 
-        &::before {
-            left: 0;
+        @media (min-width: $mobile-sm) and (max-width: $mobile) {
+            font-size: 39px;
         }
 
-        &::after {
-            right: 0;
+        @media (min-width: $mobile) {
+            &::before,
+            &::after {
+                @include size(10%, 8px);
+                @include align($pos: absolute);
+
+                content: '';
+                background-color: rgba(255, 255, 255, .2);
+            }
+
+            &::before {
+                left: 0;
+            }
+
+            &::after {
+                right: 0;
+            }
         }
+        
     }
 
     &__word {
@@ -65,5 +80,10 @@
         font-size: 24px;
         font-weight: 300;
         margin-bottom: 45px;
+
+        @media (min-width: $mobile-sm) and (max-width: $mobile) {
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
     }
 }

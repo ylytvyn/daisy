@@ -37,6 +37,21 @@
             border-top: 2px dashed #fff;
             border-right: 2px dashed #fff;
             pointer-events: none;
+
+            @media (max-width: $mobile) {
+                @include size(33px, 35vh);
+                right: -95px;
+            }
+
+            @media (max-width: $mobile-sm) {
+                display: none;
+            }
         }
+    }
+
+    &--wide {
+        width: 210px;
+        text-align: center;
+        padding: 10px 20px;
     }
 }
