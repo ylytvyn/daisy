@@ -32,3 +32,27 @@ body {
 	margin: 0 auto;
 	position: relative;
 }
+
+.arrow-down {
+	@include size(30px);
+	border: 1px solid var(--red);
+	border-radius: 50%;
+	display: block;
+	margin: 30px auto;
+	color: #fff;
+	text-decoration: none;
+	background-color: var(--red);
+	text-align: center;
+	line-height: 28px;
+	font-size: 26px;
+	font-weight: 100;
+	transition: all .3s;
+
+	&:hover {
+		transform: rotate(360deg);
+	}
+}
+
+.section {
+	padding-top: 60px;
+}

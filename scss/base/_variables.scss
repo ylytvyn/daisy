@@ -5,3 +5,5 @@
 
 // SCSS Variables
 $font: 'PF Encore Sans Pro', sans-serif;
+$red: #fc635e;
+$lightred: lighten(saturate($red, 2.07), 7.45);

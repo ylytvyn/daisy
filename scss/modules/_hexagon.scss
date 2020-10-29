@@ -26,11 +26,53 @@
         border-top: 18px solid var(--red);
     }
 
+    &--border {
+        @include size(100px, 60px);
+        border-left: solid 5px $lightred;
+        border-right: solid 5px $lightred;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color .3s;
+
+        &::before,
+        &::after {
+            @include size(70px);
+            transform: scaleY(0.5774) rotate(-45deg);
+            border: none;
+            background-color: inherit;
+            left: 10px;
+            transition: border-color .3s;
+        }
+
+        &::before {
+            top: -35px;
+            bottom: auto;
+            border-top: solid 7px $lightred;
+            border-right: solid 7px $lightred;
+        }
+
+        &::after { 
+            bottom: -35px;
+            top: auto;
+            border-bottom: solid 7px $lightred;
+            border-left: solid 7px $lightred;
+        }
+    }
+
     &--text {
         font-size: 35px;
         color: #0c252d;
         font-weight: 800;
         text-align: center;
+    }
+
+    &__icon {
+        font-size: 45px;
+        color: #fff;
+        position: relative;
+        z-index: 1;
+        transition: all .3s;
     }
 
 }

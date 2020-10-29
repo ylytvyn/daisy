@@ -25,4 +25,45 @@
         justify-content: space-between;
         min-height: 100vh;
     }
+
+    &__info {
+        text-align: center;
+        margin: 30px 0;
+        color: #fff;
+    }
+
+    &__title {
+        font-size: 51px;
+        font-weight: 800;
+        text-transform: uppercase;
+        position: relative;
+        margin-bottom: 15px;
+
+        &::before,
+        &::after {
+            @include size(10%, 8px);
+            @include align($pos: absolute);
+
+            content: '';
+            background-color: rgba(255, 255, 255, .2);
+        }
+
+        &::before {
+            left: 0;
+        }
+
+        &::after {
+            right: 0;
+        }
+    }
+
+    &__word {
+        color: var(--red);
+    }
+
+    &__description {
+        font-size: 24px;
+        font-weight: 300;
+        margin-bottom: 45px;
+    }
 }
